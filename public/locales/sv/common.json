@@ -1,4 +1,7 @@
 {
   "switchToLight": "byt till ljustema",
-  "switchToDark": "byta till mörkt tema"
+  "switchToDark": "byta till mörkt tema",
+  "languages": "språk",
+  "hideLanguageOptions": "dölj språkalternativ",
+  "showLanguageOptions": "visa språkalternativ"
 }

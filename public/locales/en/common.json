@@ -1,4 +1,7 @@
 {
   "switchToLight": "switch to light theme",
-  "switchToDark": "switch to dark theme"
+  "switchToDark": "switch to dark theme",
+  "languages": "languages",
+  "hideLanguageOptions": "hide language options",
+  "showLanguageOptions": "choose language"
 }

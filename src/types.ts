@@ -5,3 +5,9 @@ export interface SvgIconProps {
   className?: string;
   fill?: string;
 }
+
+export interface SupportedLanguagesType {
+  [key: string]: {
+    nativeName: string;
+  };
+}
