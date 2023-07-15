@@ -11,3 +11,15 @@ export interface SupportedLanguagesType {
     nativeName: string;
   };
 }
+
+export interface CountryType {
+  name: {
+    en: string;
+    sv: string;
+  };
+  capital: string[];
+  region: string;
+  subRegion: string;
+  flag: string;
+  flagDescription: string;
+}

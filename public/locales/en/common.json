@@ -3,5 +3,6 @@
   "switchToDark": "switch to dark theme",
   "languages": "languages",
   "hideLanguageOptions": "hide language options",
-  "showLanguageOptions": "choose language"
+  "showLanguageOptions": "choose language",
+  "error": "something went wrong, refresh and try again"
 }
