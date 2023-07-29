@@ -3,7 +3,6 @@ import Layout from './routes/Layout';
 import Home from './routes/Home';
 import Game from './routes/Game';
 import Countries from './routes/Countries';
-import About from './routes/About';
 
 function App() {
   return (
@@ -13,7 +12,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="game" element={<Game />} />
           <Route path="countries" element={<Countries />} />
-          <Route path="about" element={<About />} />
         </Route>
       </Routes>
     </BrowserRouter>
