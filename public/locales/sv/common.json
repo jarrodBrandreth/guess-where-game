@@ -1,8 +1,8 @@
 {
-  "switchToLight": "byt till ljustema",
-  "switchToDark": "byta till mörkt tema",
-  "languages": "språk",
-  "hideLanguageOptions": "dölj språkalternativ",
-  "showLanguageOptions": "visa språkalternativ",
-  "error": "något gick fel, uppdatera och försök igen"
+  "theme": "Tema",
+  "language": "Språk",
+  "hideLanguageOptions": "Dölj språkalternativ",
+  "showLanguageOptions": "Visa språkalternativ",
+  "error": "Något gick fel, uppdatera och försök igen.",
+  "info": "Info"
 }

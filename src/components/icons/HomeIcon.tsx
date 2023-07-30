@@ -1,6 +1,6 @@
 import { SvgIconProps } from '../../types';
 
-export default function CloseIcon({ className = '', size = '30' }: SvgIconProps) {
+export default function HomeIcon({ className = '', size = '30px' }: SvgIconProps) {
   return (
     <svg
       className={className}
@@ -10,7 +10,7 @@ export default function CloseIcon({ className = '', size = '30' }: SvgIconProps)
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 -960 960 960"
     >
-      <path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
+      <path d="M229-189h124v-258h254v258h124v-377L480-754 229-565.667V-189Zm-94 94v-518l345-259 346 259v518H524v-269h-88v269H135Zm345-377Z" />
     </svg>
   );
 }

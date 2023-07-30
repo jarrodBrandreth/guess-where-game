@@ -2,9 +2,9 @@ import LogoIcon from './icons/LogoIcon';
 
 export default function Logo() {
   return (
-    <h1 className="flex items-end gap-1 ">
-      <span className="text-2xl font-medium leading-none">Guess Where</span>
-      <LogoIcon className="fill-pop-600 dark:fill-pop-500" />
+    <h1 className="flex items-center gap-1">
+      <LogoIcon className="fill-pop" />
+      <span className="text-lg font-bold uppercase leading-none md:text-xl">Guess Where</span>
     </h1>
   );
 }

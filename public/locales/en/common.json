@@ -1,8 +1,8 @@
 {
-  "switchToLight": "switch to light theme",
-  "switchToDark": "switch to dark theme",
-  "languages": "languages",
-  "hideLanguageOptions": "hide language options",
-  "showLanguageOptions": "choose language",
-  "error": "something went wrong, refresh and try again"
+  "theme": "Theme",
+  "language": "Language",
+  "hideLanguageOptions": "Hide language options",
+  "showLanguageOptions": "Choose language",
+  "error": "Something went wrong, refresh and try again.",
+  "info": "Info"
 }
