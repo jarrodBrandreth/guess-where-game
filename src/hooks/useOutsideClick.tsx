@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 
 export const useOutsideClick = (callback: () => void) => {
-  const ref: React.MutableRefObject<null | any> = useRef(null);
+  const containerRef: React.MutableRefObject<null | any> = useRef(null);
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
         callback();
       }
     };
@@ -14,7 +14,7 @@ export const useOutsideClick = (callback: () => void) => {
     return () => {
       document.removeEventListener('click', handleClick);
     };
-  }, [ref, callback]);
+  }, [containerRef, callback]);
 
-  return ref;
+  return { containerRef };
 };
