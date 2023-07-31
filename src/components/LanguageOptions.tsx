@@ -1,19 +1,14 @@
-import { SupportedLanguagesType } from '../types';
+import { useLanguageContext } from '../hooks/useLanguageContext';
 import Toolbar from './Toolbar';
 import CheckmarkIcon from './icons/CheckmarkIcon';
 
-const supportedLanguages: SupportedLanguagesType = {
-  en: { nativeName: 'english' },
-  sv: { nativeName: 'svenska' },
-};
-
 interface Props {
-  currentLanguage: string;
   showing: boolean;
-  chooseLanguage: (lng: string) => void;
 }
 
-export default function LanguageOptions({ currentLanguage, showing, chooseLanguage }: Props) {
+export default function LanguageOptions({ showing }: Props) {
+  const { currentLanguage, changeLanguage, supportedLanguages } = useLanguageContext();
+
   return (
     <Toolbar positioning="bottom-right" additionalStyles={showing ? 'not-sr-only' : 'sr-only'}>
       <ul className="flex flex-col gap-2.5">
@@ -24,7 +19,7 @@ export default function LanguageOptions({ currentLanguage, showing, chooseLangua
               className={`capitalize outline-none ${
                 lng === currentLanguage ? '' : 'hover:text-pop  focus:text-pop'
               }`}
-              onClick={() => chooseLanguage(lng)}
+              onClick={() => changeLanguage(lng)}
               disabled={lng === currentLanguage}
             >
               {supportedLanguages[lng].nativeName}

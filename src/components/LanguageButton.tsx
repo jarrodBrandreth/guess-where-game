@@ -1,15 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import LanguageIcon from './icons/LanguageIcon';
+import { useLanguageContext } from '../hooks/useLanguageContext';
 
 interface Props {
-  currentLanguage: string;
   showing: boolean;
   onClick: () => void;
 }
 
-export default function LanguageButton({ currentLanguage, showing, onClick }: Props) {
+export default function LanguageButton({ showing, onClick }: Props) {
   const { t } = useTranslation();
+  const { currentLanguage } = useLanguageContext();
   const ariaLabel = showing ? t('hideLanguageOptions') : t('showLanguageOptions');
+
   return (
     <button
       aria-label={ariaLabel}
