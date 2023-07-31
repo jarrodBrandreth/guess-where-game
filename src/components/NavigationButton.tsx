@@ -3,7 +3,7 @@ import { SvgIconProps } from '../types';
 
 interface Props {
   Icon: ({ className, size }: SvgIconProps) => JSX.Element;
-  // label should have a translation available in translations/common
+  // label should have a translation available in locales/common
   label: string;
   onClick: () => void;
 }
@@ -15,6 +15,7 @@ export default function NavigationButton({ Icon, label, onClick }: Props) {
       className="group relative px-2 outline-none hover:text-pop focus:text-pop"
       onClick={(e) => {
         e.currentTarget.blur();
+        e.stopPropagation();
         onClick();
       }}
     >

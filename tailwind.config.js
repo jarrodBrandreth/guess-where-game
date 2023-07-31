@@ -12,7 +12,11 @@ export default {
       transparent: 'transparent',
       current: 'currentColor',
     },
-    extend: {},
+    extend: {
+      backdropBlur: {
+        xs: '2px',
+      },
+    },
   },
   plugins: [],
   darkMode: 'class',
