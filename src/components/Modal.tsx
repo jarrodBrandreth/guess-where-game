@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default function Modal({ isOpen, closeModal, children, heading }: Props) {
-  const { t } = useTranslation('modals');
+  const { t } = useTranslation();
   const { containerRef } = useOutsideClick(closeModal);
   const portal = document.getElementById('modal');
 

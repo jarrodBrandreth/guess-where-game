@@ -4,5 +4,10 @@
   "hideLanguageOptions": "Hide language options",
   "showLanguageOptions": "Choose language",
   "error": "Something went wrong, refresh and try again.",
-  "info": "Info"
+  "info": "Info",
+  "closeModal": "Close modal",
+  "countries": "Countries",
+  "game": "Game",
+  "home": "Home",
+  "countryFlagAlt": "flag of {{countryName}}"
 }

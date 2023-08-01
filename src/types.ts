@@ -13,10 +13,7 @@ export interface SupportedLanguagesType {
 }
 
 export interface CountryType {
-  name: {
-    en: string;
-    sv: string;
-  };
+  name: string;
   capital: string[];
   region: string;
   subRegion: string;

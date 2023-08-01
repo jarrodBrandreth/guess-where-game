@@ -4,5 +4,10 @@
   "hideLanguageOptions": "Dölj språkalternativ",
   "showLanguageOptions": "Visa språkalternativ",
   "error": "Något gick fel, uppdatera och försök igen.",
-  "info": "Info"
+  "info": "Info",
+  "closeModal": "Stänga modal",
+  "countries": "Länder",
+  "game": "Spel",
+  "home": "Hem",
+  "countryFlagAlt": "{{countryName}}s flagga"
 }

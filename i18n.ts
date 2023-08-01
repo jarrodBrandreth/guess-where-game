@@ -28,7 +28,7 @@ i18n
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     // add to ns when adding a new namespace json file in locales
-    ns: ['common'],
+    ns: ['common', 'capitals', 'countries'],
     defaultNS: 'common',
     fallbackNS: 'common',
     detection: options,

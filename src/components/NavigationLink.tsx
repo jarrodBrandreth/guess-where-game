@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 interface Props {
   Icon: ({ className, size }: SvgIconProps) => JSX.Element;
   path: string;
-  // label should have a matching translation in translation/routes
+  // label should have a matching translation in locales/common
   label: string;
 }
 
 export default function NavigationLink({ Icon, path, label }: Props) {
-  const { t } = useTranslation('routes');
+  const { t } = useTranslation();
   return (
     <Link
       className="group relative px-2 outline-none hover:text-pop focus:text-pop"

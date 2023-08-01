@@ -10,7 +10,7 @@ interface CountriesContextType {
 
 // Public Api
 const url =
-  'https://restcountries.com/v3.1/independent?status=true&fields=name,capital,region,subregion,flags,translations,';
+  'https://restcountries.com/v3.1/independent?status=true&fields=name,capital,region,subregion,flags,';
 
 export const CountriesContext = createContext<CountriesContextType | undefined>(undefined);
 
@@ -30,10 +30,7 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
         const res = await fetch(url);
         const data = await res.json();
         const formattedData = data.map((country: any) => ({
-          name: {
-            en: country.name.common,
-            sv: country.translations.swe.common,
-          },
+          name: country.name.common,
           capital: country.capital,
           region: country.region,
           subregion: country.subregion,
