@@ -6,7 +6,7 @@ import LanguageOptions from './LanguageOptions';
 export default function LanguageSwitcher() {
   const [showOptions, setShowOptions] = useState(false);
   const closeOptions = useCallback(() => setShowOptions(false), []);
-  const { containerRef } = useOutsideClick(closeOptions);
+  const { containerRef } = useOutsideClick<HTMLDivElement>(closeOptions);
 
   return (
     <div ref={containerRef} className="relative w-fit leading-none">
