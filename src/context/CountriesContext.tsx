@@ -1,22 +1,22 @@
 import { createContext, useEffect, useState } from 'react';
-import { CountryType } from '../types';
+import { Country } from '../types';
 import { useTranslation } from 'react-i18next';
 
 interface CountriesContextType {
-  countries: CountryType[];
+  countries: Country[];
   isLoading: boolean;
   error: null | string;
 }
 
 // Public Api
 const url =
-  'https://restcountries.com/v3.1/independent?status=true&fields=name,capital,region,subregion,flags,';
+  'https://restcountries.com/v3.1/independent?status=true&fields=name,capital,region,subregion,flags,cca3,';
 
 export const CountriesContext = createContext<CountriesContextType | undefined>(undefined);
 
 // fetch all countries, store in state to reduce api calls
 export function CountryProvider({ children }: { children: React.ReactNode }) {
-  const [countriesData, setCountriesData] = useState<CountryType[]>([]);
+  const [countriesData, setCountriesData] = useState<Country[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<null | string>(null);
   const { t } = useTranslation();
@@ -30,8 +30,10 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
         const res = await fetch(url);
         const data = await res.json();
         const formattedData = data.map((country: any) => ({
+          // cca3 country code as an id
+          id: country.cca3,
           name: country.name.common,
-          capital: country.capital,
+          capitals: country.capital,
           region: country.region,
           subregion: country.subregion,
           flag: country.flags.svg,
