@@ -9,13 +9,13 @@ const positionStyle = {
 
 const tipPosition = {
   'top-left':
-    'before:top-full before:left-4 before:-translate-y-2/4 before:border-r-neutral-200 before:border-b-neutral-200 dark:before:border-r-neutral-600 dark:before:border-b-neutral-600',
+    'before:top-full before:left-3 before:-translate-y-2/4 before:border-r-neutral-200 before:border-b-neutral-200 dark:before:border-r-neutral-600 dark:before:border-b-neutral-600',
   'top-right':
-    'before:top-full before:right-4 before:-translate-y-2/4 before:border-r-neutral-200 before:border-b-neutral-200 dark:before:border-r-neutral-600 dark:before:border-b-neutral-600',
+    'before:top-full before:right-3 before:-translate-y-2/4 before:border-r-neutral-200 before:border-b-neutral-200 dark:before:border-r-neutral-600 dark:before:border-b-neutral-600',
   'bottom-left':
-    'before:top-0 before:left-4 before:-translate-y-2/4 before:border-l-neutral-200 before:border-t-neutral-200 dark:before:border-l-neutral-600 dark:before:border-t-neutral-600',
+    'before:top-0 before:left-3 before:-translate-y-2/4 before:border-l-neutral-200 before:border-t-neutral-200 dark:before:border-l-neutral-600 dark:before:border-t-neutral-600',
   'bottom-right':
-    'before:top-0 before:right-4 before:-translate-y-2/4 before:border-l-neutral-200 before:border-t-neutral-200 dark:before:border-l-neutral-600 dark:before:border-t-neutral-600',
+    'before:top-0 before:right-3 before:-translate-y-2/4 before:border-l-neutral-200 before:border-t-neutral-200 dark:before:border-l-neutral-600 dark:before:border-t-neutral-600',
 };
 
 interface Props {
@@ -27,9 +27,9 @@ interface Props {
 
 export default function Toolbar({ positioning, additionalStyles = '', children }: Props) {
   return (
-    <div className={`absolute ${positionStyle[positioning]} p-1 ${additionalStyles}`}>
+    <div className={`absolute my-1.5 ${positionStyle[positioning]} p-1 ${additionalStyles}`}>
       <div
-        className={`relative rounded-sm border border-neutral-200 bg-neutral-100 p-6 shadow-md before:absolute before:h-3 before:w-3 before:rotate-45 before:border before:border-transparent before:bg-inherit dark:border-neutral-600 dark:bg-neutral-700 ${tipPosition[positioning]}`}
+        className={`relative rounded-sm border border-neutral-200 bg-neutral-100 p-1 shadow-md before:absolute before:h-3 before:w-3 before:rotate-45 before:border before:border-transparent before:bg-inherit dark:border-neutral-600 dark:bg-neutral-700 ${tipPosition[positioning]}`}
       >
         {children}
       </div>
