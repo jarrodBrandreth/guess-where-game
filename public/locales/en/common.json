@@ -9,5 +9,7 @@
   "countries": "Countries",
   "game": "Game",
   "home": "Home",
-  "countryFlagAlt": "flag of {{countryName}}"
+  "countryFlagAlt": "flag of {{countryName}}",
+  "coatOfArmsAlt": "coat of arms of {{countryName}}",
+  "loading": "Loading..."
 }

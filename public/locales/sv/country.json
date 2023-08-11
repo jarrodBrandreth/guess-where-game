@@ -1,0 +1,49 @@
+{
+  "capital": "Huvudstad",
+  "capitals": "Huvudstäder",
+  "description": "Beskrivning",
+  "region": "Område",
+  "subregion": "Underregion",
+  "map": "Karta",
+  "population": "Befolkning",
+  "borders": "Gränser",
+  "right": "Höger",
+  "left": "Vänster",
+  "none": "ej",
+
+  "Americas": "Amerika",
+  "Africa": "Afrika",
+  "Asia": "Asien",
+  "Europe": "Europa",
+  "Oceania": "Oceanien",
+  "World": "Värld",
+
+  "South America": "Sydamerika",
+  "Central America": "Centralamerika",
+  "Caribbean": "Karibien",
+  "North America": "Nordamerika",
+
+  "Eastern Africa": "Östra Afrika",
+  "Middle Africa": "Mellanafrika",
+  "Southern Africa": "Södra Afrika",
+  "Western Africa": "Västafrika",
+  "Northern Africa": "Norra Afrika",
+
+  "Eastern Asia": "Östra Asien",
+  "Western Asia": "Västra Asien",
+  "Southern Asia": "Södra Asien",
+  "South-Eastern Asia": "Sydöstra Asien",
+  "Central Asia": "Centralasien",
+
+  "Western Europe": "Västeuropa",
+  "Central Europe": "Centraleuropa",
+  "Eastern Europe": "Östeuropa",
+  "Southeast Europe": "Sydöstra Europa",
+  "Northern Europe": "Norra Europa",
+  "Southern Europe": "Södra Europa",
+
+  "Polynesia": "Polynesien",
+  "Micronesia": "Mikronesien",
+  "Australia and New Zealand": "Australien och Nya Zeeland",
+  "Melanesia": "Melanesia"
+}

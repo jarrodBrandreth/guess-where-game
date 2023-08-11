@@ -1,0 +1,49 @@
+{
+  "capital": "Capital",
+  "capitals": "Capitals",
+  "description": "Description",
+  "region": "Region",
+  "subregion": "Subregion",
+  "map": "Map",
+  "population": "Population",
+  "borders": "Borders",
+  "right": "Right",
+  "left": "Left",
+  "none": "none",
+
+  "Americas": "Americas",
+  "Africa": "Africa",
+  "Asia": "Asia",
+  "Europe": "Europe",
+  "Oceania": "Oceania",
+  "World": "World",
+
+  "South America": "South America",
+  "Central America": "Central America",
+  "Caribbean": "Caribbean",
+  "North America": "North America",
+
+  "Eastern Africa": "Eastern Africa",
+  "Middle Africa": "Middle Africa",
+  "Southern Africa": "Southern Africa",
+  "Western Africa": "Western Africa",
+  "Northern Africa": "Northern Africa",
+
+  "Eastern Asia": "Eastern Asia",
+  "Western Asia": "Western Asia",
+  "Southern Asia": "Southern Asia",
+  "South-Eastern Asia": "South-Eastern Asia",
+  "Central Asia": "Central Asia",
+
+  "Western Europe": "Western Europe",
+  "Central Europe": "Central Europe",
+  "Eastern Europe": "Eastern Europe",
+  "Southeast Europe": "Southeast Europe",
+  "Northern Europe": "Northern Europe",
+  "Southern Europe": "Southern Europe",
+
+  "Polynesia": "Polynesia",
+  "Micronesia": "Micronesia",
+  "Australia and New Zealand": "Australia and New Zealand",
+  "Melanesia": "Melanesia"
+}

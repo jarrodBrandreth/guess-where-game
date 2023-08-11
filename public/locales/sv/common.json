@@ -9,5 +9,7 @@
   "countries": "Länder",
   "game": "Spel",
   "home": "Hem",
-  "countryFlagAlt": "{{countryName}}s flagga"
+  "countryFlagAlt": "{{countryName}}s flagga",
+  "coatOfArmsAlt": "{{countryName}}s riksvapen",
+  "loading": "Laddar..."
 }
