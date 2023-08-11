@@ -7,6 +7,7 @@ export default {
   theme: {
     colors: {
       neutral: colors.neutral,
+      red: colors.red,
       pop: '#469269',
       inherit: 'inherit',
       transparent: 'transparent',
