@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { SvgIconProps } from '../types';
+import { MouseEventHandler } from 'react';
 
 interface Props {
   Icon: ({ className, size }: SvgIconProps) => JSX.Element;
   // label should have a translation available in locales/common
   label: string;
-  onClick: () => void;
+  onClick: MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
 export default function NavigationButton({ Icon, label, onClick }: Props) {
@@ -13,14 +14,10 @@ export default function NavigationButton({ Icon, label, onClick }: Props) {
   return (
     <button
       className="group relative px-2 outline-none hover:text-pop focus:text-pop"
-      onClick={(e) => {
-        e.currentTarget.blur();
-        e.stopPropagation();
-        onClick();
-      }}
+      onClick={onClick}
     >
       <Icon />
-      <span className="pointer-events-none absolute left-2/4 top-full -translate-x-1/2 opacity-0 group-hover:opacity-100 group-focus:opacity-100">
+      <span className="pointer-events-none absolute left-2/4 top-full -translate-x-1/2 text-sm font-semibold leading-none opacity-0 group-hover:opacity-100 group-focus:opacity-100">
         {t(label)}
       </span>
     </button>

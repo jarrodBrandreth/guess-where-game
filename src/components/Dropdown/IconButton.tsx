@@ -29,7 +29,7 @@ export default function IconButton({ label, selected, showing, onClick, children
         </span>
         <span
           id="dropdownSelection"
-          className={`pointer-events-none absolute left-1/2 top-full -translate-x-1/2 text-sm  md:text-base ${
+          className={`pointer-events-none absolute left-1/2 top-full -translate-x-1/2 text-sm font-semibold leading-none ${
             showing ? 'opacity-0' : 'opacity-0 group-hover:opacity-100 group-focus:opacity-100'
           }`}
         >

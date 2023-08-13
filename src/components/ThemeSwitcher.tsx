@@ -8,5 +8,14 @@ export default function ThemeSwitcher() {
   const darkMode = theme === 'dark';
   const ThemeIcon = darkMode ? LightIcon : DarkIcon;
 
-  return <NavigationButton Icon={ThemeIcon} label="theme" onClick={toggleTheme} />;
+  return (
+    <NavigationButton
+      Icon={ThemeIcon}
+      label="theme"
+      onClick={(e) => {
+        toggleTheme();
+        e.currentTarget.blur();
+      }}
+    />
+  );
 }
