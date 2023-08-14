@@ -1,10 +1,18 @@
-type Positioning = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+type Positioning =
+  | 'top-left'
+  | 'top-right'
+  | 'top-center'
+  | 'bottom-left'
+  | 'bottom-right'
+  | 'bottom-center';
 
 const positionStyle = {
-  'top-left': 'top-0 -translate-y-full origin-bottom pb-2',
-  'top-right': 'top-0 right-0 -translate-y-full origin-bottom pb-2',
-  'bottom-left': 'top-full pt-2',
-  'bottom-right': 'top-full right-0 pt-2',
+  'top-left': 'top-0 -translate-y-full origin-bottom pb-3',
+  'top-right': 'top-0 right-0 -translate-y-full origin-bottom pb-3',
+  'bottom-left': 'top-full',
+  'bottom-right': 'top-full right-0',
+  'top-center': 'top-0 origin-bottom left-1/2 -translate-x-1/2 -translate-y-full pb-3',
+  'bottom-center': 'top-full origin-center left-1/2 -translate-x-1/2',
 };
 
 const tipPosition = {
@@ -16,6 +24,10 @@ const tipPosition = {
     'before:top-0 before:left-3 before:-translate-y-2/4 before:border-l-neutral-200 before:border-t-neutral-200 dark:before:border-l-neutral-600 dark:before:border-t-neutral-600',
   'bottom-right':
     'before:top-0 before:right-3 before:-translate-y-2/4 before:border-l-neutral-200 before:border-t-neutral-200 dark:before:border-l-neutral-600 dark:before:border-t-neutral-600',
+  'top-center':
+    'before:top-full before:left-1/2 before:-translate-y-1/2 before:-translate-x-1/2 before:border-r-neutral-200 before:border-b-neutral-200 dark:before:border-r-neutral-600 dark:before:border-b-neutral-600',
+  'bottom-center':
+    'before:top-0 before:left-1/2 before:-translate-y-2/4 before:-translate-x-1/2 before:border-l-neutral-200 before:border-t-neutral-200 dark:before:border-l-neutral-600 dark:before:border-t-neutral-600',
 };
 
 interface Props {
