@@ -1,9 +1,9 @@
 import { createContext, useEffect, useState } from 'react';
-import { Country } from '../types';
+import { CountryType } from '../types';
 import { useTranslation } from 'react-i18next';
 
 interface CountriesContextType {
-  countries: Country[];
+  countries: CountryType[];
   isLoading: boolean;
   error: null | string;
 }
@@ -16,7 +16,7 @@ export const CountriesContext = createContext<CountriesContextType | undefined>(
 
 // fetch all countries, store in state to reduce api calls
 export function CountryProvider({ children }: { children: React.ReactNode }) {
-  const [countriesData, setCountriesData] = useState<Country[]>([]);
+  const [countriesData, setCountriesData] = useState<CountryType[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<null | string>(null);
   const { t } = useTranslation();
@@ -29,7 +29,7 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
         setError(null);
         const res = await fetch(url);
         const data = await res.json();
-        const formattedData = data.map((country: any) => ({
+        const formattedData: CountryType[] = data.map((country: any) => ({
           // cca3 country code as an id
           id: country.cca3,
           name: country.name.common,
