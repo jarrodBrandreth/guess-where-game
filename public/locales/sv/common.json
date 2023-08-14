@@ -11,5 +11,6 @@
   "home": "Hem",
   "countryFlagAlt": "{{countryName}}s flagga",
   "coatOfArmsAlt": "{{countryName}}s riksvapen",
-  "loading": "Laddar..."
+  "loading": "Laddar...",
+  "clear": "Rensa"
 }
