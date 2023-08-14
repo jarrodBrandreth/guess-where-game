@@ -1,3 +1,5 @@
+import { countriesFilters } from './constants';
+
 export type ColorTheme = 'light' | 'dark';
 
 export interface SvgIconProps {
@@ -12,13 +14,13 @@ export interface SupportedLanguagesType {
   };
 }
 
-export interface Country {
+export interface CountryType {
   // cca3 country code as an id
   id: string;
   name: string;
   capitals: string[];
   region: string;
-  subRegion: string;
+  subregion: string;
   flag: string;
   flagDescription: string;
 }
@@ -32,6 +34,10 @@ export type CountryDetails = {
   borders: string[];
   carSide: string;
 };
+
+export type CountriesFilters = typeof countriesFilters;
+export type RegionFilter = keyof CountriesFilters;
+export type SubregionFilter = CountriesFilters[RegionFilter][number];
 
 export type CountryResponse = {
   name: {
