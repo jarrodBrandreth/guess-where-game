@@ -5,3 +5,11 @@
 html {
   font-family: 'Noto Sans', sans-serif;
 }
+
+.responsive-text {
+  font-size: clamp(12px, 2.5vw, 16px); /* Responsive font size using clamp() */
+}
+
+button svg {
+  pointer-events: none;
+}
