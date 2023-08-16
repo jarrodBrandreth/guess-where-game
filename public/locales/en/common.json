@@ -12,5 +12,6 @@
   "countryFlagAlt": "flag of {{countryName}}",
   "coatOfArmsAlt": "coat of arms of {{countryName}}",
   "loading": "Loading...",
-  "clear": "Clear"
+  "clear": "Clear",
+  "clearSearch": "Clear Search"
 }

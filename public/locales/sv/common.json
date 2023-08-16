@@ -12,5 +12,6 @@
   "countryFlagAlt": "{{countryName}}s flagga",
   "coatOfArmsAlt": "{{countryName}}s riksvapen",
   "loading": "Laddar...",
-  "clear": "Rensa"
+  "clear": "Rensa",
+  "clearSearch": "Rensa Sökningen"
 }
