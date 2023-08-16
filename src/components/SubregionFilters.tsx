@@ -19,9 +19,10 @@ export default function SubregionFilters({ currentRegion, currentSelected, updat
   const [showFilters, setShowFilters] = useState(false);
   const { containerRef } = useOutsideClick<HTMLDivElement>(() => setShowFilters(false));
   const noneSelected = !currentSelected.length;
+  const numberOfSelected = currentSelected.length;
 
   return (
-    <div ref={containerRef} className="relative w-fit text-sm">
+    <div ref={containerRef} className="relative z-10 w-fit text-sm">
       <button
         className={`flex items-center rounded-md px-2 py-1.5 hover:bg-pop hover:text-neutral-100 ${
           showFilters ? 'bg-pop text-neutral-100' : 'bg-transparent'
@@ -57,6 +58,11 @@ export default function SubregionFilters({ currentRegion, currentSelected, updat
             </button>
           </div>
         </Toolbar>
+      )}
+      {numberOfSelected > 0 && (
+        <span className="absolute left-full top-0 flex h-5 w-5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-red-500 dark:bg-red-600  ">
+          <span className="text-xs text-neutral-100 opacity-100">{numberOfSelected}</span>
+        </span>
       )}
     </div>
   );
