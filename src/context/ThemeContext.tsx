@@ -27,7 +27,7 @@ interface ThemeContextType {
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<ColorTheme>(initialTheme);
+  const [theme, setTheme] = useState<ColorTheme>(initialTheme());
 
   useEffect(() => {
     updateTheme(theme);
