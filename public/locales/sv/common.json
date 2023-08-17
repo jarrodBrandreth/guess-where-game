@@ -13,5 +13,7 @@
   "coatOfArmsAlt": "{{countryName}}s riksvapen",
   "loading": "Laddar...",
   "clear": "Rensa",
-  "clearSearch": "Rensa Sökningen"
+  "clearSearch": "Rensa Sökningen",
+  "filters": "Filter",
+  "clearFilters": "Rensa Filter"
 }

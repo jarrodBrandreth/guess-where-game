@@ -13,5 +13,7 @@
   "coatOfArmsAlt": "coat of arms of {{countryName}}",
   "loading": "Loading...",
   "clear": "Clear",
-  "clearSearch": "Clear Search"
+  "clearSearch": "Clear Search",
+  "filters": "Filters",
+  "clearFilters": "Clear Filters"
 }
