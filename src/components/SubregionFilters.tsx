@@ -60,7 +60,7 @@ export default function SubregionFilters({ currentRegion, currentSelected, updat
         </Toolbar>
       )}
       {numberOfSelected > 0 && (
-        <span className="absolute left-full top-0 flex h-5 w-5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-red-500 dark:bg-red-600  ">
+        <span className="absolute left-full top-0 flex h-5 w-5 -translate-x-3/4 -translate-y-1/2 items-center justify-center rounded-full bg-red-500 dark:bg-red-600">
           <span className="text-xs text-neutral-100 opacity-100">{numberOfSelected}</span>
         </span>
       )}

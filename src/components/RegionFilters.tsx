@@ -12,7 +12,7 @@ interface Props {
 export default function RegionFilters({ currentFilter, updateFilter }: Props) {
   const { t } = useTranslation('country');
   return (
-    <div className="z-10 px-2 text-sm">
+    <div className="z-20 px-2 text-sm">
       <Dropdown label={t('region')} selected={t(currentFilter ?? 'World')}>
         {Object.keys(countriesFilters).map((filter) => (
           <DropdownOption
