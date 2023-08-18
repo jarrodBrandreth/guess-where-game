@@ -10,7 +10,7 @@ export default function CheckmarkIcon({ className = '', size = '18px' }: SvgIcon
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 -960 960 960"
     >
-      <path d="M378-222 130-470l68-68 180 180 383-383 68 68-451 451Z" />
+      <path d="M378-246 154-470l43-43 181 181 384-384 43 43-427 427Z" />
     </svg>
   );
 }

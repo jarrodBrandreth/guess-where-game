@@ -10,7 +10,7 @@ export default function HomeIcon({ className = '', size = '30px' }: SvgIconProps
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 -960 960 960"
     >
-      <path d="M229-189h124v-258h254v258h124v-377L480-754 229-565.667V-189Zm-94 94v-518l345-259 346 259v518H524v-269h-88v269H135Zm345-377Z" />
+      <path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z" />
     </svg>
   );
 }
