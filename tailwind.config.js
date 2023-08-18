@@ -8,6 +8,7 @@ export default {
     colors: {
       neutral: colors.neutral,
       red: colors.red,
+      green: colors.green,
       pop: '#469269',
       inherit: 'inherit',
       transparent: 'transparent',
