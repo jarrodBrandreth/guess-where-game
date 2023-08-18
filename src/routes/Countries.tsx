@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { useCountriesContext } from '../hooks/useCountriesContext';
 import RegionFilters from '../components/RegionFilters';
 import SubregionFilters from '../components/SubregionFilters';
@@ -14,7 +14,7 @@ export default function Countries() {
   const [regionFilter, setRegionFilter] = useState<RegionFilter | null>(null);
   const [subregionFilter, setSubregionFilter] = useState<SubregionFilter[]>([]);
   const [searchValue, setSearchValue] = useState('');
-  const updateSearchValue = useCallback((e: string) => setSearchValue(e), []);
+  const updateSearchValue = (e: string) => setSearchValue(e);
   const { t } = useTranslation(['country', 'countries']);
 
   const applyFilters = (countries: CountryType[]) => {
