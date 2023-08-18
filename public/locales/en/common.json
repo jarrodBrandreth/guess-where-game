@@ -15,5 +15,8 @@
   "clear": "Clear",
   "clearSearch": "Clear Search",
   "filters": "Filters",
-  "clearFilters": "Clear Filters"
+  "clearFilters": "Clear Filters",
+  "clearFiltersTryAgain": "Clear your filters and try again",
+  "numberOfResults": "{{resultsNumber}} results",
+  "noResults": "No results found for '{{query}}'"
 }

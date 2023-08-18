@@ -15,5 +15,8 @@
   "clear": "Rensa",
   "clearSearch": "Rensa Sökningen",
   "filters": "Filter",
-  "clearFilters": "Rensa Filter"
+  "clearFilters": "Rensa Filter",
+  "clearFiltersTryAgain": "Rensa dina filter och försök igen",
+  "numberOfResults": "{{resultsNumber}} resultat",
+  "noResults": "Inga resultat hittades för '{{query}}'"
 }

@@ -24,7 +24,7 @@ export default function Accordion({
 
   return (
     <div className={`relative bg-neutral-50 p-3 dark:bg-neutral-800 ${containerStyles}`}>
-      <div className="flex items-center justify-start gap-4">
+      <div className="flex items-baseline justify-start gap-4">
         <button
           className="flex items-center justify-start px-2 py-1"
           onClick={() => setShowing((prev) => !prev)}
@@ -35,7 +35,7 @@ export default function Accordion({
         {additionalElements}
       </div>
       <div
-        className={`${showing ? 'block' : 'hidden'} w-full bg-inherit p-3 ${
+        className={`${showing ? 'block' : 'hidden'} w-full bg-inherit py-3 ${
           childrenAbsolute ? 'absolute left-0 top-full' : ''
         }`}
       >
