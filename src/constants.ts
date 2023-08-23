@@ -1,3 +1,6 @@
+// based on tailwind screen size
+export const mobileScreenSize = 640;
+
 export const countriesFilters = {
   Americas: ['South America', 'Central America', 'Caribbean', 'North America'],
   Africa: [

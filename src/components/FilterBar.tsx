@@ -15,10 +15,10 @@ export default function FilterBar({ hasFilters, clearFilters, resultsLength, chi
   return (
     <Accordion
       title={t('filters')}
-      containerStyles="sticky top-[70px] md:top-[63px]"
+      containerStyles="sticky top-0 border-b border-neutral-300 dark:border-neutral-600"
       additionalElements={
         hasFilters ? (
-          <div className="flex flex-wrap items-baseline justify-between gap-4">
+          <div className="flex flex-wrap items-baseline justify-between gap-4 pr-14">
             <ButtonSolid content={t('clearFilters')} size="text-xs" onClick={clearFilters} />
             <span>{t('numberOfResults', { resultsNumber: resultsLength })}</span>
           </div>

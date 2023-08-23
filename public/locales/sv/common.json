@@ -18,5 +18,6 @@
   "clearFilters": "Rensa Filter",
   "clearFiltersTryAgain": "Rensa dina filter och försök igen",
   "numberOfResults": "{{resultsNumber}} resultat",
-  "noResults": "Inga resultat hittades för '{{query}}'"
+  "noResults": "Inga resultat hittades för '{{query}}'",
+  "menu": "Meny"
 }

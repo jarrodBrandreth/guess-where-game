@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom';
 import LogoIcon from './icons/LogoIcon';
 
 export default function Logo() {
   return (
-    <h1 className="top-1/2 flex items-center gap-1 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
-      <LogoIcon className="fill-pop" />
-      <span className="text-lg font-bold uppercase leading-none md:text-xl">Guess Where</span>
-    </h1>
+    <Link className="flex items-center gap-0.5" to="/">
+      <span className="text-green-700">
+        <LogoIcon size="26px" />
+      </span>
+      <h1 className="text-xl font-bold uppercase">Guess Where</h1>
+    </Link>
   );
 }

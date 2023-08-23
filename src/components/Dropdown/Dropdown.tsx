@@ -2,24 +2,31 @@ import { useCallback, useState } from 'react';
 import { useOutsideClick } from '../../hooks/useOutsideClick';
 import { SvgIconProps } from '../../types';
 import TextBoxButton from './TextBoxButton';
-import IconButton from './IconButton';
-import Toolbar from '../Toolbar';
+import Toolbar, { ToolBarPositioning } from '../Toolbar';
+
+interface ButtonProps {
+  label: string;
+  Icon: ({ className, size }: SvgIconProps) => JSX.Element;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  isActive?: boolean;
+}
 
 interface Props {
   label: string;
   selected: string;
-  buttonStyle?: 'textbox' | 'icon';
-  // use DropdownOption component as children
   children: React.ReactNode;
+  Button?: ({ label, onClick, Icon, isActive }: ButtonProps) => JSX.Element | undefined;
   Icon?: ({ className, size }: SvgIconProps) => JSX.Element;
+  dropDownPositioning?: ToolBarPositioning;
 }
 
 export default function Dropdown({
   label,
   selected,
-  buttonStyle = 'textbox',
   children,
+  Button,
   Icon,
+  dropDownPositioning = 'bottom-right',
 }: Props) {
   const [showOptions, setShowOptions] = useState(false);
   const closeOptions = useCallback(() => setShowOptions(false), []);
@@ -28,7 +35,9 @@ export default function Dropdown({
 
   return (
     <div ref={containerRef} className="relative flex w-fit items-center justify-start gap-2">
-      {buttonStyle === 'textbox' && (
+      {Button && Icon ? (
+        <Button label={label} onClick={toggleOptions} Icon={Icon} isActive={showOptions} />
+      ) : (
         <TextBoxButton
           label={label}
           selected={selected}
@@ -36,17 +45,12 @@ export default function Dropdown({
           onClick={toggleOptions}
         />
       )}
-      {buttonStyle === 'icon' && Icon && (
-        <IconButton label={label} selected={selected} showing={showOptions} onClick={toggleOptions}>
-          <Icon />
-        </IconButton>
-      )}
       {showOptions && (
-        <Toolbar positioning="bottom-right">
+        <Toolbar positioning={dropDownPositioning}>
           <div className="flex flex-col gap-2">
             <h2
               className={`mx-4 my-2 text-center text-lg font-semibold ${
-                buttonStyle === 'textbox' ? 'sr-only' : 'not-sr-only'
+                Button ? 'sr-only' : 'not-sr-only'
               }`}
             >
               {label}

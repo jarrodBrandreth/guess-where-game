@@ -35,7 +35,7 @@ export default function Accordion({
         {additionalElements}
       </div>
       <div
-        className={`${showing ? 'block' : 'hidden'} w-full bg-inherit py-3 ${
+        className={`${showing ? 'block' : 'hidden'} w-full bg-inherit pb-3 pt-8 ${
           childrenAbsolute ? 'absolute left-0 top-full' : ''
         }`}
       >

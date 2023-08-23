@@ -1,4 +1,4 @@
-type Positioning =
+export type ToolBarPositioning =
   | 'top-left'
   | 'top-right'
   | 'top-center'
@@ -32,7 +32,7 @@ const tipPosition = {
 
 interface Props {
   // position relative to the parent container
-  positioning: Positioning;
+  positioning: ToolBarPositioning;
   additionalStyles?: string;
   children: React.ReactNode;
 }

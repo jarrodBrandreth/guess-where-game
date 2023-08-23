@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import ExpandLessIcon from './icons/ExpandLessIcon';
 import ExpandMoreIcon from './icons/ExpandMoreIcon';
@@ -17,7 +17,8 @@ interface Props {
 export default function SubregionFilters({ currentRegion, currentSelected, updateFilters }: Props) {
   const { t } = useTranslation(['common', 'country']);
   const [showFilters, setShowFilters] = useState(false);
-  const { containerRef } = useOutsideClick<HTMLDivElement>(() => setShowFilters(false));
+  const hideFilters = useCallback(() => setShowFilters(false), []);
+  const { containerRef } = useOutsideClick<HTMLDivElement>(hideFilters);
   const noneSelected = !currentSelected.length;
   const numberOfSelected = currentSelected.length;
 
