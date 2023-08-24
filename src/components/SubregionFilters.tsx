@@ -33,33 +33,31 @@ export default function SubregionFilters({ currentRegion, currentSelected, updat
         <span className="font-semibold">{t('subregion', { ns: 'country' })}</span>
         <span className="">{showFilters ? <ExpandLessIcon /> : <ExpandMoreIcon />}</span>
       </button>
-      {showFilters && (
-        <Toolbar positioning="bottom-center">
-          <fieldset className="grid w-max grid-cols-1 gap-3 p-3 md:grid-cols-2">
-            <legend className="sr-only">{t('subregion', { ns: 'country' })}</legend>
-            {countriesFilters[currentRegion].map((filter) => {
-              return (
-                <div key={filter}>
-                  <Checkbox
-                    label={t(filter, { ns: 'country' })}
-                    isChecked={currentSelected.includes(filter)}
-                    onChange={() => updateFilters(filter)}
-                  />
-                </div>
-              );
-            })}
-          </fieldset>
-          <div className="mt-3 flex justify-center ">
-            <button
-              className={`p-2 font-semibold text-pop ${noneSelected ? 'opacity-60' : ''}`}
-              disabled={noneSelected}
-              onClick={() => updateFilters(null)}
-            >
-              {t('clear', { ns: 'common' })}
-            </button>
-          </div>
-        </Toolbar>
-      )}
+      <Toolbar show={showFilters} positioning="bottom-center">
+        <fieldset className="grid w-max grid-cols-1 gap-3 p-3 md:grid-cols-2">
+          <legend className="sr-only">{t('subregion', { ns: 'country' })}</legend>
+          {countriesFilters[currentRegion].map((filter) => {
+            return (
+              <div key={filter}>
+                <Checkbox
+                  label={t(filter, { ns: 'country' })}
+                  isChecked={currentSelected.includes(filter)}
+                  onChange={() => updateFilters(filter)}
+                />
+              </div>
+            );
+          })}
+        </fieldset>
+        <div className="mt-3 flex justify-center ">
+          <button
+            className={`p-2 font-semibold text-pop ${noneSelected ? 'opacity-60' : ''}`}
+            disabled={noneSelected}
+            onClick={() => updateFilters(null)}
+          >
+            {t('clear', { ns: 'common' })}
+          </button>
+        </div>
+      </Toolbar>
       {numberOfSelected > 0 && (
         <span className="absolute left-full top-0 flex h-5 w-5 -translate-x-3/4 -translate-y-1/2 items-center justify-center rounded-full bg-red-500 dark:bg-red-600">
           <span className="text-xs text-neutral-100 opacity-100">{numberOfSelected}</span>

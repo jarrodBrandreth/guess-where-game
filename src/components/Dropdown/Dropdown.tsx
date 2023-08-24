@@ -45,20 +45,18 @@ export default function Dropdown({
           onClick={toggleOptions}
         />
       )}
-      {showOptions && (
-        <Toolbar positioning={dropDownPositioning}>
-          <div className="flex flex-col gap-2">
-            <h2
-              className={`mx-4 my-2 text-center text-lg font-semibold ${
-                Button ? 'sr-only' : 'not-sr-only'
-              }`}
-            >
-              {label}
-            </h2>
-            <ul className="">{children}</ul>
-          </div>
-        </Toolbar>
-      )}
+      <Toolbar show={showOptions} positioning={dropDownPositioning}>
+        <div className="flex flex-col gap-2">
+          <h2
+            className={`mx-4 my-2 text-center text-lg font-semibold ${
+              Button ? 'sr-only' : 'not-sr-only'
+            }`}
+          >
+            {label}
+          </h2>
+          <ul className="">{children}</ul>
+        </div>
+      </Toolbar>
     </div>
   );
 }

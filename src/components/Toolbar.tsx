@@ -34,12 +34,22 @@ interface Props {
   // position relative to the parent container
   positioning: ToolBarPositioning;
   additionalStyles?: string;
+  show?: boolean;
   children: React.ReactNode;
 }
 
-export default function Toolbar({ positioning, additionalStyles = '', children }: Props) {
+export default function Toolbar({
+  positioning,
+  additionalStyles = '',
+  show = false,
+  children,
+}: Props) {
   return (
-    <div className={`absolute my-1.5 ${positionStyle[positioning]} p-1 ${additionalStyles}`}>
+    <div
+      className={`${show ? 'block' : 'hidden'} absolute my-1.5 ${
+        positionStyle[positioning]
+      } p-1 ${additionalStyles}`}
+    >
       <div
         className={`relative rounded-sm border border-neutral-200 bg-neutral-100 p-1 shadow-md before:absolute before:h-3 before:w-3 before:rotate-45 before:border before:border-transparent before:bg-inherit dark:border-neutral-600 dark:bg-neutral-700 ${tipPosition[positioning]}`}
       >
