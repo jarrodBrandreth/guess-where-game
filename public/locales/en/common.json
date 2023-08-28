@@ -18,6 +18,6 @@
   "clearFilters": "Clear Filters",
   "clearFiltersTryAgain": "Clear your filters and try again",
   "numberOfResults": "{{resultsNumber}} results",
-  "noResults": "No results found for '{{query}}'",
+  "noResultsFound": "No results found for '{{query}}'",
   "menu": "Menu"
 }
