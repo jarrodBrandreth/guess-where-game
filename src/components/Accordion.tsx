@@ -11,6 +11,8 @@ interface Props {
   childrenAbsolute?: boolean;
   // additional tailwind styles to be applied to container
   containerStyles?: string;
+  // optional to set initial showing state defaults to false
+  initialShowingState?: boolean;
 }
 
 export default function Accordion({
@@ -19,8 +21,9 @@ export default function Accordion({
   containerStyles,
   children,
   childrenAbsolute = false,
+  initialShowingState = false,
 }: Props) {
-  const [showing, setShowing] = useState(false);
+  const [showing, setShowing] = useState<boolean>(initialShowingState);
 
   return (
     <div className={`relative bg-neutral-50 p-3 dark:bg-neutral-800 ${containerStyles}`}>
