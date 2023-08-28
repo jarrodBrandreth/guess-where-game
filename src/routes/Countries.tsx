@@ -1,33 +1,21 @@
 import { useState } from 'react';
-import { useCountriesContext } from '../hooks/useCountriesContext';
 import RegionFilters from '../components/RegionFilters';
 import SubregionFilters from '../components/SubregionFilters';
-import { CountryType, RegionFilter, SubregionFilter } from '../types';
-import SearchBar from '../components/SearchBar';
+import { RegionFilter, SubregionFilter } from '../types';
 import { useTranslation } from 'react-i18next';
 import CountriesResults from '../components/CountriesResults';
 import FilterBar from '../components/FilterBar';
 import NoResults from '../components/NoResults';
+import { useCountryResults } from '../hooks/useCountryResults';
+import SearchBar from '../components/SearchBar';
 
 export default function Countries() {
-  const { countries } = useCountriesContext();
   const [regionFilter, setRegionFilter] = useState<RegionFilter | null>(null);
   const [subregionFilter, setSubregionFilter] = useState<SubregionFilter[]>([]);
   const [searchValue, setSearchValue] = useState('');
   const updateSearchValue = (e: string) => setSearchValue(e);
-  const { t } = useTranslation(['country', 'countries']);
-
-  const applyFilters = (countries: CountryType[]) => {
-    return countries.filter((country) => {
-      const { name, region, subregion } = country;
-      const hasSearch = t(name, { ns: 'countries' })
-        .toLocaleLowerCase()
-        .includes(searchValue.toLocaleLowerCase());
-      const includesRegion = !regionFilter || regionFilter === region;
-      const includesSubRegion = !subregionFilter.length || subregionFilter.includes(subregion);
-      return [hasSearch, includesRegion, includesSubRegion].every((value) => value === true);
-    });
-  };
+  const { getCountriesByAllFilters } = useCountryResults();
+  const { t } = useTranslation('country');
 
   // updates region filter and resets subregion filter when updating
   const updateRegionFilter = (r: RegionFilter | null) => {
@@ -51,15 +39,18 @@ export default function Countries() {
   };
 
   const hasFilters = regionFilter !== null || searchValue !== '';
-  const filteredResults = applyFilters(countries);
-  const resultsLength = filteredResults.length;
+  const results = getCountriesByAllFilters({
+    searchValue,
+    regionFilter,
+    subregionFilter,
+  });
 
   return (
     <section className="bg-inherit">
       <FilterBar
         hasFilters={hasFilters}
         clearFilters={clearAllFilters}
-        resultsLength={resultsLength}
+        resultsLength={results.length}
       >
         <RegionFilters currentFilter={regionFilter} updateFilter={updateRegionFilter} />
         {regionFilter && (
@@ -69,14 +60,16 @@ export default function Countries() {
             updateFilters={updateSubregionFilter}
           />
         )}
-        <SearchBar
-          placeholder={t('searchCountries')}
-          searchValue={searchValue}
-          updateSearch={updateSearchValue}
-        />
+        <div className="w-[min(100%,224px)]">
+          <SearchBar
+            placeholder={t('searchCountries')}
+            searchValue={searchValue}
+            updateSearch={updateSearchValue}
+          />
+        </div>
       </FilterBar>
-      {filteredResults.length ? (
-        <CountriesResults countries={filteredResults} />
+      {results.length ? (
+        <CountriesResults countries={results} />
       ) : (
         <NoResults searchValue={searchValue} clearFilters={clearAllFilters} />
       )}
