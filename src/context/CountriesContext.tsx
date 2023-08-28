@@ -1,11 +1,10 @@
 import { createContext, useEffect, useState } from 'react';
 import { CountryType } from '../types';
-import { useTranslation } from 'react-i18next';
 
 interface CountriesContextType {
   countries: CountryType[];
   isLoading: boolean;
-  error: null | string;
+  error: boolean;
 }
 
 // Public Api
@@ -16,17 +15,15 @@ export const CountriesContext = createContext<CountriesContextType | undefined>(
 
 // fetch all countries, store in state to reduce api calls
 export function CountryProvider({ children }: { children: React.ReactNode }) {
-  const [countriesData, setCountriesData] = useState<CountryType[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<null | string>(null);
-  const { t } = useTranslation();
-  const errorString = t('error');
+  const [countries, setCountries] = useState<CountryType[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchCountries = async () => {
       try {
         setIsLoading(true);
-        setError(null);
+        setError(false);
         const res = await fetch(url);
         const data = await res.json();
         const formattedData: CountryType[] = data.map((country: any) => ({
@@ -39,18 +36,18 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
           flag: country.flags.svg,
           flagDescription: country.flags.alt,
         }));
-        setCountriesData(formattedData);
+        setCountries(formattedData);
       } catch (error) {
-        setError(errorString);
+        setError(true);
       } finally {
         setIsLoading(false);
       }
     };
     fetchCountries();
-  }, [errorString]);
+  }, []);
 
   const value = {
-    countries: countriesData,
+    countries,
     isLoading,
     error,
   };
